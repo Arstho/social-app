@@ -6,6 +6,7 @@ import { SigninForm, SignupForm } from './_auth/forms'
 import { Home } from './_root/pages'
 import AuthLayout from './_auth/AuthLayout'
 import RootLayout from './_root/RootLayout'
+import { Toaster } from "@/components/ui/toaster"
 
 const App = () => {
   return (
@@ -15,11 +16,13 @@ const App = () => {
           <Route path='/sign-in' element={<SigninForm />} />
           <Route path='/sign-up' element={<SignupForm />} />
         </Route>
-        
+
         <Route element={<RootLayout />}>
           <Route index element={<Home />} />
         </Route>
       </Routes>
+      
+      <Toaster />
     </main>
   )
 }
